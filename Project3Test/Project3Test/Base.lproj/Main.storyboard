@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eFa-Uz-N3m">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Project3Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeQ-oo-La1">
+                                <rect key="frame" x="96.666666666666686" y="174" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="COB-rF-inv"/>
+                                    <constraint firstAttribute="width" constant="200" id="WPA-HQ-fCJ"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="us"/>
+                                <connections>
+                                    <action selector="buttnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WyD-lh-WSe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SY0-Sj-tet">
+                                <rect key="frame" x="96.666666666666686" y="324" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="DC4-by-Q4C"/>
+                                    <constraint firstAttribute="height" constant="100" id="pOM-5A-KPh"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="us"/>
+                                <connections>
+                                    <action selector="buttnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aD6-aj-yH0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ea-sp-0Ky">
+                                <rect key="frame" x="96.666666666666686" y="474" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="bdO-Td-4ku"/>
+                                    <constraint firstAttribute="height" constant="100" id="grn-Jy-vGk"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="us"/>
+                                <connections>
+                                    <action selector="buttnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6nT-Sz-DBu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SY0-Sj-tet" firstAttribute="leading" secondItem="MeQ-oo-La1" secondAttribute="leading" id="EML-64-E2k"/>
+                            <constraint firstItem="MeQ-oo-La1" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GND-YO-vEh"/>
+                            <constraint firstItem="5Ea-sp-0Ky" firstAttribute="centerX" secondItem="SY0-Sj-tet" secondAttribute="centerX" id="GU1-zA-rDh"/>
+                            <constraint firstItem="5Ea-sp-0Ky" firstAttribute="top" secondItem="SY0-Sj-tet" secondAttribute="bottom" constant="50" id="Jec-d0-QNz"/>
+                            <constraint firstItem="SY0-Sj-tet" firstAttribute="top" secondItem="MeQ-oo-La1" secondAttribute="bottom" constant="50" id="NOV-ak-OS4"/>
+                            <constraint firstItem="MeQ-oo-La1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="71" id="rhK-5R-0ue"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4Ts-AA-ZOY"/>
+                    <connections>
+                        <outlet property="button1" destination="MeQ-oo-La1" id="HFI-2B-aCJ"/>
+                        <outlet property="button2" destination="SY0-Sj-tet" id="Re5-nX-xt3"/>
+                        <outlet property="button3" destination="5Ea-sp-0Ky" id="htN-d2-Xsq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980.91603053435108" y="-34.507042253521128"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IeW-pv-u3o">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eFa-Uz-N3m" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CU9-vc-HgY">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bJ3-TT-zTy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gkM-i8-2oi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="54.198473282442748" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="us" width="200" height="100"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
