@@ -7,7 +7,9 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {    @IBOutlet weak var imageView: UIImageView!
+class DetailViewController: UIViewController {
+    
+    @IBOutlet weak var imageView: UIImageView!
     
     var selectedImage: String? //이미지 이름
     var selectedPictureNumber = 0///선택된 이미지 인덱스
