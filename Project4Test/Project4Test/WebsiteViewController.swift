@@ -5,6 +5,7 @@
 //  Created by 박다미 on 2023/01/29.
 //
 
+
 import UIKit
 import WebKit
 
@@ -41,8 +42,11 @@ title: "Open", style: .plain, target: self, action: #selector(openTapped))
          .flexibleSpace, target: nil, action: nil)
                 let refresh = UIBarButtonItem(barButtonSystemItem:
          .refresh, target: webView, action: #selector(webView.reload))
-
-                toolbarItems = [progressButton, spacer, refresh]
+        let goBack = UIBarButtonItem(title: "Back", style: .plain, target: webView, action: #selector(webView.goBack))
+        let goForward = UIBarButtonItem(title: "Forward", style: .plain, target: webView, action: #selector(webView.goForward))
+        
+        
+                toolbarItems = [progressButton, spacer, refresh, goBack,goForward]
                 navigationController?.isToolbarHidden = false
 
                 webView.addObserver(self, forKeyPath:
