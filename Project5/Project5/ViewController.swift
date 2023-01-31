@@ -64,6 +64,71 @@ class ViewController: UITableViewController{
         present(ac, animated: true)
     }
     func submit(_ answer: String) {
+        let lowerAnswer = answer.lowercased()
+        //단어가 유효한지 3가지 체크 다 소문자로 바꿈
+        if isPossible(word: lowerAnswer){
+            if isOriginal(word:lowerAnswer){
+                if isReal(word: lowerAnswer) {
+                    usedWords.insert(answer.lowercased(), at: 0)
+                    
+                    let indexPath = IndexPath(row: 0, section: 0)
+                    tableView.insertRows(at: [indexPath], with: .automatic)
+                    return
+                    //까지는 무조건 true일때 새배열 자동추가
+                    
+                }
+                else {
+                    showErrorMessage(errorTitle: "없는 단어입니다.", errorMessage: "이건 올라갈수 없는 답입니다!")
+                }
+            }
+            else {
+                showErrorMessage(errorTitle: "이미 나온 단어입니다.", errorMessage: "새로운단어를 말하세요!")
+            }
+        }
+        else{
+            
+            guard let title = title?.lowercased() else {return}
+            showErrorMessage(errorTitle: "주어진 철자가 아닙니다.", errorMessage: "\(title.lowercased())에 있는 철자가 아닙니다!")
+ 
+            }
+        }
+        
+    
+    func isPossible(word: String) -> Bool {
+        guard var tempWord = title?.lowercased() else { return false }
+        //중복인지
+        for letter in word {
+            if let position = tempWord.firstIndex(of: letter) {
+                tempWord.remove(at: position)
+            } else {
+                return false
+            }
+        }
+        return true
     }
     
+    // Check if the word is used
+    //글자를 포함하는지
+    func isOriginal(word: String) -> Bool {
+        return !usedWords.contains(word)
+    }
+    //실존하는 단어인지
+    func isReal(word: String) -> Bool {
+        guard let startWord = title?.lowercased() else { return false }
+
+        let checker = UITextChecker() // An object you use to check a string for misspelled words.
+        let range = NSRange(location: 0, length: word.utf16.count) 
+        print(range.length)
+        let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
+        
+        return misspelledRange.location == NSNotFound && startWord != word && range.length > 2
+    }
+    
+    func showErrorMessage(errorTitle title: String, errorMessage message: String) {
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+    }
+
 }
