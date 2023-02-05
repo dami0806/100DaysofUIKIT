@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6c-ij-aqv">
-                                <rect key="frame" x="96.666666666666686" y="153" width="200" height="100"/>
+                                <rect key="frame" x="96.666666666666686" y="123" width="200" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="e2M-Uc-cMc"/>
                                     <constraint firstAttribute="height" constant="100" id="h4x-FA-ehT"/>
+                                    <constraint firstAttribute="width" secondItem="P6c-ij-aqv" secondAttribute="height" multiplier="2:1" id="wBl-kt-5IN"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
@@ -29,7 +29,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3l-rx-OgN">
-                                <rect key="frame" x="96.666666666666686" y="303" width="200" height="100"/>
+                                <rect key="frame" x="96.666666666666686" y="253" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="4yD-bp-I5v"/>
+                                    <constraint firstAttribute="width" secondItem="n3l-rx-OgN" secondAttribute="height" multiplier="2:1" id="bYn-hx-qHm"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -37,7 +41,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDv-NI-4B6">
-                                <rect key="frame" x="96.666666666666686" y="453" width="200" height="100"/>
+                                <rect key="frame" x="96.666666666666686" y="383" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oDv-NI-4B6" secondAttribute="height" multiplier="2:1" id="aZU-3Z-sf0"/>
+                                    <constraint firstAttribute="height" constant="100" id="jkG-2r-vIE"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -48,16 +56,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="n3l-rx-OgN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6d0-r9-Jvg"/>
-                            <constraint firstItem="P6c-ij-aqv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="JnV-4i-Qsr"/>
-                            <constraint firstItem="oDv-NI-4B6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M0J-jd-rs3"/>
-                            <constraint firstItem="oDv-NI-4B6" firstAttribute="top" secondItem="n3l-rx-OgN" secondAttribute="bottom" constant="50" id="OBk-PD-QLS"/>
-                            <constraint firstItem="n3l-rx-OgN" firstAttribute="height" secondItem="P6c-ij-aqv" secondAttribute="height" id="Sgs-fU-moj"/>
-                            <constraint firstItem="oDv-NI-4B6" firstAttribute="width" secondItem="P6c-ij-aqv" secondAttribute="width" id="WK8-aG-sNO"/>
-                            <constraint firstItem="n3l-rx-OgN" firstAttribute="top" secondItem="P6c-ij-aqv" secondAttribute="bottom" constant="50" id="XKk-bk-84G"/>
-                            <constraint firstItem="P6c-ij-aqv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nay-72-8XW"/>
-                            <constraint firstItem="oDv-NI-4B6" firstAttribute="height" secondItem="P6c-ij-aqv" secondAttribute="height" id="pOg-iC-LJi"/>
-                            <constraint firstItem="n3l-rx-OgN" firstAttribute="width" secondItem="P6c-ij-aqv" secondAttribute="width" id="tQ4-ds-tgt"/>
+                            <constraint firstItem="P6c-ij-aqv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Ec-q9-Vgf"/>
+                            <constraint firstItem="oDv-NI-4B6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8uX-lC-h80"/>
+                            <constraint firstItem="n3l-rx-OgN" firstAttribute="top" secondItem="P6c-ij-aqv" secondAttribute="bottom" constant="30" id="E1I-51-pk7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="oDv-NI-4B6" secondAttribute="bottom" constant="20" id="VfG-XK-dAV"/>
+                            <constraint firstItem="oDv-NI-4B6" firstAttribute="height" secondItem="n3l-rx-OgN" secondAttribute="height" id="Ynn-aL-SH2"/>
+                            <constraint firstItem="n3l-rx-OgN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZVW-KE-zLN"/>
+                            <constraint firstItem="P6c-ij-aqv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="j5U-IX-SqH"/>
+                            <constraint firstItem="n3l-rx-OgN" firstAttribute="height" secondItem="P6c-ij-aqv" secondAttribute="height" id="s6b-Op-A4x"/>
+                            <constraint firstItem="oDv-NI-4B6" firstAttribute="top" secondItem="n3l-rx-OgN" secondAttribute="bottom" constant="30" id="yLg-FD-Kib"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7mq-lM-ZTj"/>
