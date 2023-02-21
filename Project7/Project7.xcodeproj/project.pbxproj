@@ -15,6 +15,7 @@
 		37745CA329A2F7D8007656D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37745CA129A2F7D8007656D9 /* LaunchScreen.storyboard */; };
 		37E3ACFF29A3030200D85878 /* Petition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3ACFE29A3030200D85878 /* Petition.swift */; };
 		37E3AD0129A303BD00D85878 /* Petitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E3AD0029A303BD00D85878 /* Petitions.swift */; };
+		37E4194229A4C4DB007BEE3A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E4194129A4C4DB007BEE3A /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		37745CA429A2F7D8007656D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37E3ACFE29A3030200D85878 /* Petition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petition.swift; sourceTree = "<group>"; };
 		37E3AD0029A303BD00D85878 /* Petitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petitions.swift; sourceTree = "<group>"; };
+		37E4194129A4C4DB007BEE3A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				37745CA429A2F7D8007656D9 /* Info.plist */,
 				37E3ACFE29A3030200D85878 /* Petition.swift */,
 				37E3AD0029A303BD00D85878 /* Petitions.swift */,
+				37E4194129A4C4DB007BEE3A /* DetailViewController.swift */,
 			);
 			path = Project7;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				37745C9B29A2F7D5007656D9 /* ViewController.swift in Sources */,
 				37E3ACFF29A3030200D85878 /* Petition.swift in Sources */,
 				37745C9729A2F7D5007656D9 /* AppDelegate.swift in Sources */,
+				37E4194229A4C4DB007BEE3A /* DetailViewController.swift in Sources */,
 				37745C9929A2F7D5007656D9 /* SceneDelegate.swift in Sources */,
 				37E3AD0129A303BD00D85878 /* Petitions.swift in Sources */,
 			);
