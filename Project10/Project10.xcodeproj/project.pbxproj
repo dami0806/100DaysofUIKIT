@@ -14,6 +14,7 @@
 		3783439329D14C43002BED40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3783439229D14C43002BED40 /* Assets.xcassets */; };
 		3783439629D14C43002BED40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3783439429D14C43002BED40 /* LaunchScreen.storyboard */; };
 		3783439E29D16886002BED40 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3783439D29D16886002BED40 /* PersonCell.swift */; };
+		37927E4829D2FE19005D57DA /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37927E4729D2FE19005D57DA /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3783439529D14C43002BED40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3783439729D14C43002BED40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3783439D29D16886002BED40 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		37927E4729D2FE19005D57DA /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				3783439229D14C43002BED40 /* Assets.xcassets */,
 				3783439429D14C43002BED40 /* LaunchScreen.storyboard */,
 				3783439729D14C43002BED40 /* Info.plist */,
+				37927E4729D2FE19005D57DA /* Person.swift */,
 			);
 			path = Project10;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37927E4829D2FE19005D57DA /* Person.swift in Sources */,
 				3783438E29D14C40002BED40 /* ViewController.swift in Sources */,
 				3783438A29D14C40002BED40 /* AppDelegate.swift in Sources */,
 				3783439E29D16886002BED40 /* PersonCell.swift in Sources */,
