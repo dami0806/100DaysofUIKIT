@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		376CA0DE29DAC9C400924924 /* FireParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 376CA0DD29DAC9C300924924 /* FireParticles.sks */; };
+		376CA0E129DACB6600924924 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 376CA0DF29DACB6500924924 /* MyParticle.sks */; };
+		376CA0E229DACB6600924924 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 376CA0E029DACB6600924924 /* Assets.xcassets */; };
 		37FBD2A229D593B400EA7308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FBD2A129D593B400EA7308 /* AppDelegate.swift */; };
 		37FBD2A429D593B400EA7308 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 37FBD2A329D593B400EA7308 /* GameScene.sks */; };
 		37FBD2A629D593B400EA7308 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 37FBD2A529D593B400EA7308 /* Actions.sks */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		376CA0DD29DAC9C300924924 /* FireParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticles.sks; sourceTree = "<group>"; };
+		376CA0DF29DACB6500924924 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
+		376CA0E029DACB6600924924 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37FBD29E29D593B400EA7308 /* Project11-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project11-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37FBD2A129D593B400EA7308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37FBD2A329D593B400EA7308 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -43,6 +49,8 @@
 		37FBD29529D593B300EA7308 = {
 			isa = PBXGroup;
 			children = (
+				376CA0DF29DACB6500924924 /* MyParticle.sks */,
+				376CA0E029DACB6600924924 /* Assets.xcassets */,
 				37FBD2A029D593B400EA7308 /* Project11-1 */,
 				37FBD29F29D593B400EA7308 /* Products */,
 			);
@@ -67,6 +75,7 @@
 				37FBD2AB29D593B400EA7308 /* Main.storyboard */,
 				37FBD2AE29D593B700EA7308 /* Assets.xcassets */,
 				37FBD2B029D593B700EA7308 /* LaunchScreen.storyboard */,
+				376CA0DD29DAC9C300924924 /* FireParticles.sks */,
 			);
 			path = "Project11-1";
 			sourceTree = "<group>";
@@ -132,7 +141,10 @@
 				37FBD2AD29D593B400EA7308 /* Main.storyboard in Resources */,
 				37FBD2A429D593B400EA7308 /* GameScene.sks in Resources */,
 				37FBD2AF29D593B700EA7308 /* Assets.xcassets in Resources */,
+				376CA0DE29DAC9C400924924 /* FireParticles.sks in Resources */,
+				376CA0E129DACB6600924924 /* MyParticle.sks in Resources */,
 				37FBD2B229D593B700EA7308 /* LaunchScreen.storyboard in Resources */,
+				376CA0E229DACB6600924924 /* Assets.xcassets in Resources */,
 				37FBD2A629D593B400EA7308 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
