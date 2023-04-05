@@ -14,6 +14,18 @@ class ViewController: UICollectionViewController,UINavigationControllerDelegate,
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPerson))
         
         self.navigationController?.delegate = self
+        let defaults = UserDefaults.standard
+        
+        if let savedPeople = defaults.object(forKey: "people") as? Data {
+            let jsonDecoder = JSONDecoder()
+            
+            do {
+                people = try jsonDecoder.decode([Person].self, from: savedPeople)
+            }
+            catch {
+                print("Failed to load people")
+            }
+        }
     }
     @objc func addNewPerson() {
         //        let picker = UIImagePickerController()
@@ -110,6 +122,7 @@ class ViewController: UICollectionViewController,UINavigationControllerDelegate,
             
             let person = Person(name: "Unknown", image: imageName)
             self?.people.append(person)
+            self?.save()
             
             DispatchQueue.main.async {
                 self?.collectionView.reloadData()
@@ -133,7 +146,15 @@ class ViewController: UICollectionViewController,UINavigationControllerDelegate,
                 return
             }
             person.name = newName
-            self?.collectionView.reloadData()
+            DispatchQueue.global().async {
+                self?.save()
+                
+                DispatchQueue.main.async {
+                    self?.save()
+                    self?.collectionView.reloadData()
+                }
+            }
+            //self?.collectionView.reloadData()
         })
         
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
@@ -172,6 +193,7 @@ class ViewController: UICollectionViewController,UINavigationControllerDelegate,
             
             // deletion ok
             self?.people.remove(at: indexPath.item)
+            self?.save()
             
             DispatchQueue.main.async {
                 self?.collectionView.deleteItems(at: [indexPath])
@@ -188,9 +210,14 @@ class ViewController: UICollectionViewController,UINavigationControllerDelegate,
         }
     }
     func save() {
-        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: people, requiringSecureCoding: false) {
+        let jsonEncoder = JSONEncoder()
+        
+        if let savedData = try? jsonEncoder.encode(people) {
             let defaults = UserDefaults.standard
             defaults.set(savedData, forKey: "people")
+        }
+        else {
+            print("Failed to save people")
         }
     }
     

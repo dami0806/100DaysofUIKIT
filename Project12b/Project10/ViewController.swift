@@ -8,12 +8,27 @@
 import UIKit
 
 class ViewController: UICollectionViewController,UINavigationControllerDelegate, UIImagePickerControllerDelegate{
+    
     var people = [Person]()
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPerson))
         
         self.navigationController?.delegate = self
+        
+        
+        let defaults = UserDefaults.standard
+        
+        if let savedPeople = defaults.object(forKey: "people") as? Data {
+            let jsonDecoder = JSONDecoder()
+            
+            do {
+                people = try jsonDecoder.decode([Person].self, from: savedPeople)
+            }
+            catch {
+                print("Failed to load people")
+            }
+        }
     }
     @objc func addNewPerson() {
         //        let picker = UIImagePickerController()
@@ -131,7 +146,15 @@ class ViewController: UICollectionViewController,UINavigationControllerDelegate,
                 return
             }
             person.name = newName
-            self?.collectionView.reloadData()
+            DispatchQueue.global().async {
+                self?.save()
+                
+                DispatchQueue.main.async {
+                    self?.save()
+                    self?.collectionView.reloadData()
+                }
+            }
+            //self?.collectionView.reloadData()
         })
         
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
@@ -170,6 +193,7 @@ class ViewController: UICollectionViewController,UINavigationControllerDelegate,
             
             // deletion ok
             self?.people.remove(at: indexPath.item)
+            self?.save()
             
             DispatchQueue.main.async {
                 self?.collectionView.deleteItems(at: [indexPath])
@@ -183,6 +207,18 @@ class ViewController: UICollectionViewController,UINavigationControllerDelegate,
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             
             self?.present(ac, animated: true)
+        }
+    }
+    func save(){
+        let jsonEncoder = JSONEncoder()
+        
+        if let savedData = try? jsonEncoder.encode(people){
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: "people")
+            
+        }
+        else {
+            print("Failed to save people")
         }
     }
 }
