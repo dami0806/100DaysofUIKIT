@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="red-us-LyD">
-                                <rect key="frame" x="20" y="64" width="353" height="470"/>
+                                <rect key="frame" x="20" y="113" width="353" height="421"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ccz-Wj-bD6">
-                                        <rect key="frame" x="10" y="10" width="333" height="450"/>
+                                        <rect key="frame" x="10" y="10" width="333" height="401"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -28,11 +28,11 @@
                                     <constraint firstItem="Ccz-Wj-bD6" firstAttribute="centerY" secondItem="red-us-LyD" secondAttribute="centerY" id="J7a-w5-0bK"/>
                                     <constraint firstItem="Ccz-Wj-bD6" firstAttribute="leading" secondItem="red-us-LyD" secondAttribute="leading" constant="10" id="M5O-Md-UuC"/>
                                     <constraint firstItem="Ccz-Wj-bD6" firstAttribute="centerX" secondItem="red-us-LyD" secondAttribute="centerX" id="Vk9-gX-tbW"/>
-                                    <constraint firstItem="Ccz-Wj-bD6" firstAttribute="top" secondItem="red-us-LyD" secondAttribute="top" constant="10" id="pPs-PI-6fJ"/>
+                                    <constraint firstItem="Ccz-Wj-bD6" firstAttribute="top" secondItem="red-us-LyD" secondAttribute="top" constant="10" id="cv4-5X-eWu"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Intensity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vb-Kr-0r3">
-                                <rect key="frame" x="20" y="560" width="72" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intensity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vb-Kr-0r3">
+                                <rect key="frame" x="27" y="560" width="65" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -45,8 +45,8 @@
                                     <action selector="changeFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dUn-mV-fJk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2GB-zv-cKa">
-                                <rect key="frame" x="300" y="605" width="61" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2GB-zv-cKa">
+                                <rect key="frame" x="300" y="600" width="61" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save"/>
                                 <connections>
@@ -76,12 +76,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2GB-zv-cKa" secondAttribute="trailing" constant="32" id="cbn-wT-tXB"/>
                             <constraint firstAttribute="bottom" secondItem="red-us-LyD" secondAttribute="bottom" constant="318" id="fsK-JT-TxX"/>
                             <constraint firstItem="Arb-Wt-gxU" firstAttribute="leading" secondItem="0vb-Kr-0r3" secondAttribute="trailing" constant="29" id="qDf-g8-aNg"/>
-                            <constraint firstItem="red-us-LyD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-39" id="qLO-kE-Bw4"/>
+                            <constraint firstItem="red-us-LyD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="10" id="qLO-kE-Bw4"/>
                             <constraint firstItem="Arb-Wt-gxU" firstAttribute="top" secondItem="red-us-LyD" secondAttribute="bottom" constant="22" id="sjN-dT-d4X"/>
                             <constraint firstItem="szu-yY-BWQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xpi-8J-ffq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="8tx-Ue-xDz"/>
+                    <navigationItem key="navigationItem" id="Aqz-U5-IMg"/>
                     <connections>
                         <outlet property="imageView" destination="Ccz-Wj-bD6" id="76e-ge-9bk"/>
                         <outlet property="intensity" destination="Arb-Wt-gxU" id="5pw-vX-KGg"/>
