@@ -11,7 +11,6 @@ import SpriteKit
 class GameScene: SKScene {
     var slots = [WhackSlot]()
     var gameScore: SKLabelNode!
-    
     var popupTime = 0.85
     var numRounds = 0
     
@@ -81,7 +80,6 @@ class GameScene: SKScene {
     }
     
     func createSlot(at position: CGPoint){
-        
         let slot = WhackSlot()
         slot.configure(at: position)
         addChild(slot)
@@ -107,7 +105,7 @@ class GameScene: SKScene {
         
         slots.shuffle()
         slots[0].show(hideTime: popupTime)
-    
+        
         if Int.random(in: 0...12) > 4 { slots[1].show(hideTime: popupTime) }
         if Int.random(in: 0...12) > 8 {  slots[2].show(hideTime: popupTime) }
         if Int.random(in: 0...12) > 10 { slots[3].show(hideTime: popupTime) }
