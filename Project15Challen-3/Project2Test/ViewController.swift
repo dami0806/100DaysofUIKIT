@@ -51,9 +51,20 @@ class ViewController: UIViewController {
         count += 1
     }
     
+    //challenge
+    
+    @IBAction func buttonTappedAnim(_ sender: UIButton) {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 5,options: []) {
+            sender.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        }
+    }
+    
     
     @IBAction func buttonTapped(_ sender: UIButton) {
- 
+        // //challenge 3
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 5, options: []) {
+            sender.transform = .identity
+        }
         var title: String
        
         
