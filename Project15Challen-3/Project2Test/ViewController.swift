@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+     
         countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
         button1.layer.borderWidth = 1
         button2.layer.borderWidth = 1
@@ -53,15 +53,13 @@ class ViewController: UIViewController {
     
     //challenge
     
-    @IBAction func buttonTappedAnim(_ sender: UIButton) {
-        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 5,options: []) {
-            sender.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-        }
-    }
-    
+
     
     @IBAction func buttonTapped(_ sender: UIButton) {
         // //challenge 3
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 5, options: [], animations: {
+            sender.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        })
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 5, options: []) {
             sender.transform = .identity
         }
