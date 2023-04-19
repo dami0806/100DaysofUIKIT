@@ -43,6 +43,36 @@
             </objects>
             <point key="canvasLocation" x="991.60305343511448" y="-27.464788732394368"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="fTb-ik-JG1">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="Gbq-im-KUw" customClass="WebViewController" customModule="Project16_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eCm-7c-Fs8">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNL-sV-Atp">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UXa-VE-XOr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UXa-VE-XOr" firstAttribute="trailing" secondItem="hNL-sV-Atp" secondAttribute="trailing" id="B9M-lG-pZZ"/>
+                            <constraint firstItem="hNL-sV-Atp" firstAttribute="top" secondItem="UXa-VE-XOr" secondAttribute="top" id="Pak-6P-RUZ"/>
+                            <constraint firstItem="hNL-sV-Atp" firstAttribute="leading" secondItem="UXa-VE-XOr" secondAttribute="leading" id="ZNV-NS-CJU"/>
+                            <constraint firstItem="UXa-VE-XOr" firstAttribute="bottom" secondItem="hNL-sV-Atp" secondAttribute="bottom" id="wv1-Xo-vhT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="hNL-sV-Atp" id="Uay-7L-Zi3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ow-QR-e4P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1662" y="-76"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="jWC-Nc-WoG">
             <objects>
