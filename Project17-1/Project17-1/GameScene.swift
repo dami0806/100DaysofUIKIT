@@ -12,7 +12,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var player : SKSpriteNode!
     var scoreLabel: SKLabelNode!
     var gameOverLabel: SKLabelNode?
-    var gameRestartLabel: SKLabelNode?
+    var newGameLabel: SKLabelNode?
     
     var timerLoop = 0
     var timerInterval: Double = 1
@@ -92,6 +92,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameTimer?.invalidate()
         
             
+        gameOverLabel = SKLabelNode(fontNamed: "Chalkduster")
+        gameOverLabel?.position = CGPoint(x: 512, y: 384)
+        gameOverLabel?.zPosition = 1
+        gameOverLabel?.fontSize = 48
+        gameOverLabel?.horizontalAlignmentMode = .center
+        gameOverLabel?.text = "GAME OVER"
+        addChild(gameOverLabel!)
+
+        newGameLabel = SKLabelNode(fontNamed: "Chalkduster")
+        newGameLabel?.position = CGPoint(x: 512, y: 324)
+        newGameLabel?.zPosition = 1
+        newGameLabel?.fontSize = 32
+        newGameLabel?.horizontalAlignmentMode = .center
+        newGameLabel?.text = "New Game"
+        newGameLabel?.name = "NewGame"
+        addChild(newGameLabel!)
         
     }
     
@@ -114,13 +130,44 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             return
         }
         
-//        let location = touch.location(in: self)
-//        let objects = nodes(at: location)
-//        for object in objects {
-//            if object.name == "RestartGame"{
-//                restart()
-//            }
-//        }
+        let location = touch.location(in: self)
+        
+        let objects = nodes(at: location)
+        for object in objects {
+            if object.name == "NewGame" {
+                newGame()
+            }
+
+        }
+    }
+    func newGame() {
+        guard isGameOver else { return }
+        
+        score = 0
+        timerLoop = 0
+        timerInterval = 1
+        isGameOver = false
+        
+        //라벨 없애기
+        if let gameOverLabel = gameOverLabel {
+            gameOverLabel.removeFromParent()
+        }
+        if let newGameLabel = newGameLabel {
+            newGameLabel.removeFromParent()
+        }
+        
+        // 적들 없애고 초기화
+        for node in children {
+            if node.name == "Enemy" {
+                node.removeFromParent()
+            }
+        }
+        
+        player.position = CGPoint(x: 100, y: 384)
+        addChild(player)
+
+        gameTimer = Timer.scheduledTimer(timeInterval: timerInterval, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+
     }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else {return}
