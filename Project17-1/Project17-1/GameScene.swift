@@ -11,6 +11,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var starfield: SKEmitterNode!
     var player : SKSpriteNode!
     var scoreLabel: SKLabelNode!
+    var gameOverLabel: SKLabelNode?
+    var gameRestartLabel: SKLabelNode?
+    
+    var timerLoop = 0
+    var timerInterval: Double = 1
+    
     
     var possibleEnemies = ["ball", "hammer","tv"]
     var gameTimer : Timer?
@@ -49,6 +55,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     @objc func createEnemy(){
+        //적 의 수가 20 이상이 되면, 게임 타이머의 실행 간격을 0.1초씩 줄여서 적이 더 빠르게 이동
+        
+
+        if timerLoop >= 20 { //timerLoop 변수는 게임에서 출현한 적의 수를 저장
+            timerLoop = 0
+            
+            if timerInterval >= 0.2 {
+                timerInterval -= 0.1
+            }
+                
+            gameTimer?.invalidate() //현재 실행 중인 타이머를 중지
+            gameTimer = Timer.scheduledTimer(timeInterval: timerInterval, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true) // 새로운 타이머를 생성
+
+        }
+        
         guard let enemy = possibleEnemies.randomElement() else{ return}
         let sprite = SKSpriteNode(imageNamed: enemy)
         sprite.position = CGPoint(x: 1200, y: Int.random(in: 50...736))
@@ -59,6 +80,47 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         sprite.physicsBody?.velocity = CGVector(dx: -500, dy: 0)
         sprite.physicsBody?.linearDamping = 0
         sprite.physicsBody?.angularDamping = 0
+    }
+    func gameOver(){
+        
+        let explosion = SKEmitterNode(fileNamed: "explosion")!
+        explosion.position = player.position
+        addChild(explosion)
+
+        player.removeFromParent()
+        isGameOver = true
+        gameTimer?.invalidate()
+        
+            
+        
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        //        let explosion = SKEmitterNode(fileNamed: "explosion")!
+        //        explosion.position = player.position
+        //        addChild(explosion)
+        //
+        //        player.removeFromParent()
+        //        isGameOver = true
+        //        gameTimer?.invalidate()
+        gameOver()
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else {return}
+        
+        if !isGameOver {
+            gameOver()
+            return
+        }
+        
+//        let location = touch.location(in: self)
+//        let objects = nodes(at: location)
+//        for object in objects {
+//            if object.name == "RestartGame"{
+//                restart()
+//            }
+//        }
     }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else {return}
@@ -71,16 +133,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         player.position = location
     }
-    
-    func didBegin(_ contact: SKPhysicsContact) {
-        let explosion = SKEmitterNode(fileNamed: "explosion")!
-        explosion.position = player.position
-        addChild(explosion)
-        
-        player.removeFromParent()
-        isGameOver = true
-    }
-    
+
     
     override func update(_ currentTime: TimeInterval) {
         for node in children {
