@@ -81,6 +81,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         sprite.physicsBody?.linearDamping = 0
         sprite.physicsBody?.angularDamping = 0
     }
+    
     func gameOver(){
         
         let explosion = SKEmitterNode(fileNamed: "explosion")!
